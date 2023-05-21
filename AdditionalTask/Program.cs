@@ -14,12 +14,22 @@ while (n<1 || n>100)
     n = int.Parse(Console.ReadLine()!);
 }
 
+Console.Write("Укажите, на какой позиции будет 0 (не раньше 3 числа): ");
+int m = int.Parse(Console.ReadLine()!);
+
+while (m<3 || m>100)
+{
+    Console.Write("Вы ошиблись\nУкажите, на какой позиции будет 0 (не раньше 3 числа): ");
+    m = int.Parse(Console.ReadLine()!);
+}
+
 int i = 0;
 int max1 = 0;
 int max2 = 0;
+int numberB = 0;
 do 
 {
-    int numberA = new Random().Next (1,101);
+    int numberA = new Random().Next (0,100);
     Console.WriteLine (numberA);
     if (numberA>max1) 
     {
@@ -27,8 +37,10 @@ do
         max1 = numberA;
     }
     i++;
-}
-while (i<n);
+    if (i == m-1) 
+       {Console.WriteLine (numberB);}
+    }
+    while (i<n-1);
 
 Console.Write ("Максимальное число ");
 Console.WriteLine (max1);
