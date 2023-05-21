@@ -17,7 +17,7 @@ while (n<1 || n>100)
 Console.Write("Укажите, на какой позиции будет 0 (не раньше 3 числа): ");
 int m = int.Parse(Console.ReadLine()!);
 
-while (m<3 || m>100)
+while (m<3 || m>n)
 {
     Console.Write("Вы ошиблись\nУкажите, на какой позиции будет 0 (не раньше 3 числа): ");
     m = int.Parse(Console.ReadLine()!);
@@ -36,6 +36,10 @@ do
         max2 = max1; 
         max1 = numberA;
     }
+    else if (numberA>max2) 
+    {
+        max2 = numberA;
+        } 
     i++;
     if (i == m-1) 
        {Console.WriteLine (numberB);}
